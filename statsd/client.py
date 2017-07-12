@@ -102,7 +102,7 @@ class StatsClientBase(object):
                 pipe._send_stat(stat, '0|g', 1)
                 pipe._send_stat(stat, '%s|g' % value, 1)
         else:
-            prefix = '++' if delta and value >= 0 else ''           # alters delta to use ++
+            prefix = 'p' if delta and value >= 0 else ''           # alters delta to use ++
             self._send_stat(stat, '%s%s|g' % (prefix, value), rate)
 
     def set(self, stat, value, rate=1):
